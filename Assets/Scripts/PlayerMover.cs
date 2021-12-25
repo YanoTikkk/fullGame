@@ -13,7 +13,7 @@ public class PlayerMover : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         inputHorizontal = Input.GetAxis("Horizontal");
         playerRigidbody.AddForce(new Vector3(inputHorizontal,0f,0f),ForceMode.Acceleration);
