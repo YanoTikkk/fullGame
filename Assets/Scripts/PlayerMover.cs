@@ -11,6 +11,7 @@ public class PlayerMover : MonoBehaviour
     private float inputHorizontal;
     private bool grounded;
     [SerializeField] private float jumpSpeed = 5f;
+    [SerializeField] private Transform ColiderTransform;
     [SerializeField] private float speedPosition = 5f;
     
     private void Start()
@@ -20,6 +21,7 @@ public class PlayerMover : MonoBehaviour
 
     private void Update()
     {
+        ScaleColider();
         Jump();
     }
 
@@ -36,16 +38,34 @@ public class PlayerMover : MonoBehaviour
         }
     }
 
+    private void ScaleColider()
+    {
+        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.S) || grounded == false )
+        {
+            ColiderTransform.localScale = Vector3.Lerp(ColiderTransform.localScale, new Vector3(1f, 0.5f, 1f),
+                Time.deltaTime * 13f);
+        }
+        else
+        {
+            ColiderTransform.localScale = Vector3.Lerp(ColiderTransform.localScale, new Vector3(1f, 1f, 1f),
+                Time.deltaTime * 13f);
+        }
+    }
+
     private void Mover()
     {
         inputHorizontal = Input.GetAxis("Horizontal");
-        playerRigidbody.AddForce(new Vector3(inputHorizontal,0f,0f) * speedPosition,ForceMode.Acceleration);
+        playerRigidbody.AddForce(inputHorizontal * speedPosition,0f,0f,ForceMode.Acceleration);
+        playerRigidbody.AddForce(-playerRigidbody.velocity.x,0f,0f,ForceMode.Acceleration);
     }
 
     private void OnCollisionStay(Collision collisionInfo)
     {
-       // float angle = Vector3.Angle(IEdgeConnectorListene)
-        grounded = true;
+        float angle = Vector3.Angle(collisionInfo.contacts[0].normal, Vector3.up);
+        if (angle < 45f)
+        {
+            grounded = true;
+        }
     }
 
     private void OnCollisionExit(Collision other)
