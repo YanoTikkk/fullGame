@@ -337,10 +337,13 @@
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/200b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/Bullets.cs"
+"Assets/Scripts/Carrot.cs"
 "Assets/Scripts/FollowTarget.cs"
 "Assets/Scripts/Gune.cs"
+"Assets/Scripts/Hen.cs"
 "Assets/Scripts/PlayerMover.cs"
 "Assets/Scripts/Pointer.cs"
+"Assets/Scripts/Rotate.cs"
 -langversion:9.0
 
 /deterministic

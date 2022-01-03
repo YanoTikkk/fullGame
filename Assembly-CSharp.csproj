@@ -41,11 +41,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Gune.cs" />
      <Compile Include="Assets\Scripts\PlayerMover.cs" />
      <Compile Include="Assets\Scripts\FollowTarget.cs" />
-     <Compile Include="Assets\Scripts\Pointer.cs" />
      <Compile Include="Assets\Scripts\Bullets.cs" />
-     <Compile Include="Assets\Scripts\Gune.cs" />
+     <Compile Include="Assets\Scripts\Pointer.cs" />
+     <Compile Include="Assets\Scripts\Hen.cs" />
+     <Compile Include="Assets\Scripts\Rotate.cs" />
+     <Compile Include="Assets\Scripts\Carrot.cs" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.2.5f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

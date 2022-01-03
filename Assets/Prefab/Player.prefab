@@ -256,6 +256,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8327f86616fd34f76af06863141cb07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 898901616012563171, guid: ef7ca78bcaabd4d08a50028e28c46ed2, type: 3}
+  spawnBullet: {fileID: 3205274178808959123}
+  bulletSpeed: 30
+  shotDelay: 0.2
 --- !u!1001 &7825423892120495330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -311,8 +315,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4675324048640685169, guid: 6608e5ce5dd5d4825a470184434ee328, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675324048640685169, guid: 6608e5ce5dd5d4825a470184434ee328, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8386747316906903977, guid: 6608e5ce5dd5d4825a470184434ee328, type: 3}
+    - {fileID: 668075964207155897, guid: 6608e5ce5dd5d4825a470184434ee328, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6608e5ce5dd5d4825a470184434ee328, type: 3}
+--- !u!4 &3205274178808959123 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4675324048640685169, guid: 6608e5ce5dd5d4825a470184434ee328, type: 3}
+  m_PrefabInstance: {fileID: 7825423892120495330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5086396170782383903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3030922342941752317, guid: 6608e5ce5dd5d4825a470184434ee328, type: 3}
