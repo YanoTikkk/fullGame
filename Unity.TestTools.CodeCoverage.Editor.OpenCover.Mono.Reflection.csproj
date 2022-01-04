@@ -41,10 +41,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\Editor\CoverageFormats\OpenCover\Mono.Reflection\ByteBuffer.cs" />
-     <Compile Include="Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\Editor\CoverageFormats\OpenCover\Mono.Reflection\Instruction.cs" />
      <Compile Include="Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\Editor\CoverageFormats\OpenCover\Mono.Reflection\MethodBodyReader.cs" />
      <Compile Include="Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\Editor\CoverageFormats\OpenCover\Mono.Reflection\Disassembler.cs" />
+     <Compile Include="Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\Editor\CoverageFormats\OpenCover\Mono.Reflection\ByteBuffer.cs" />
+     <Compile Include="Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\Editor\CoverageFormats\OpenCover\Mono.Reflection\Instruction.cs" />
      <None Include="Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\Editor\CoverageFormats\OpenCover\Mono.Reflection\Reflection.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2021.2.5f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -310,20 +310,11 @@
      <Reference Include="Unity.Plastic.Antlr3.Runtime">
      <HintPath>/Users/dimayankovich/Desktop/fullGame/Library/PackageCache/com.unity.collab-proxy@1.15.4/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualScripting.YamlDotNet">
-     <HintPath>/Users/dimayankovich/Desktop/fullGame/Library/PackageCache/com.unity.visualscripting@1.7.5/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll</HintPath>
-     </Reference>
      <Reference Include="unityplastic">
      <HintPath>/Users/dimayankovich/Desktop/fullGame/Library/PackageCache/com.unity.collab-proxy@1.15.4/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualScripting.IonicZip">
-     <HintPath>/Users/dimayankovich/Desktop/fullGame/Library/PackageCache/com.unity.visualscripting@1.7.5/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll</HintPath>
-     </Reference>
      <Reference Include="log4netPlastic">
      <HintPath>/Users/dimayankovich/Desktop/fullGame/Library/PackageCache/com.unity.collab-proxy@1.15.4/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>/Users/dimayankovich/Desktop/fullGame/Library/PackageCache/com.unity.visualscripting@1.7.5/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="ReportGeneratorMerged">
      <HintPath>/Users/dimayankovich/Desktop/fullGame/Library/PackageCache/com.unity.testtools.codecoverage@1.0.1/lib/ReportGenerator/ReportGeneratorMerged.dll</HintPath>
