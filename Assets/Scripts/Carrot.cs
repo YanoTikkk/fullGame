@@ -19,4 +19,15 @@ public class Carrot : MonoBehaviour
         toPlayer = (playerTransform.position - transform.position).normalized;
         rigibody.velocity = toPlayer * speed;
     }
+
+    private void OnCollisionEnter(Collision collisionInfo)
+    {
+        if (collisionInfo.rigidbody)
+        {
+            if (collisionInfo.collider.GetComponent<PlayerHeath>())
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }
