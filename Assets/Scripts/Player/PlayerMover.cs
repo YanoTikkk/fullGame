@@ -7,13 +7,16 @@ using UnityEngine.UI;
 
 public class PlayerMover : MonoBehaviour
 {
-    private Rigidbody playerRigidbody;
-    private float inputHorizontal;
-    private bool grounded;
     [SerializeField] private float jumpSpeed = 5f;
     [SerializeField] private Transform ColiderTransform;
     [SerializeField] private float speedPosition = 5f;
+    [SerializeField] private float friction = 5f;
+    [SerializeField] private float maxSpeed;
     
+    private Rigidbody playerRigidbody;
+    private float inputHorizontal;
+    private bool grounded;
+
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
@@ -34,7 +37,7 @@ public class PlayerMover : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) & grounded)
         {
-            playerRigidbody.AddForce(new Vector3(0f,jumpSpeed,0f));
+            playerRigidbody.AddForce(0f, jumpSpeed,0f, ForceMode.VelocityChange);
         }
     }
 
@@ -42,7 +45,7 @@ public class PlayerMover : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.S) || grounded == false )
         {
-            ColiderTransform.localScale = Vector3.Lerp(ColiderTransform.localScale, new Vector3(1f, 0.5f, 1f),
+            ColiderTransform.localScale = Vector3.Lerp(ColiderTransform.localScale, new Vector3(1f, 0.7f, 1f),
                 Time.deltaTime * 13f);
         }
         else
@@ -54,9 +57,28 @@ public class PlayerMover : MonoBehaviour
 
     private void Mover()
     {
-        inputHorizontal = Input.GetAxis("Horizontal");
-        playerRigidbody.AddForce(inputHorizontal * speedPosition,0f,0f,ForceMode.Acceleration);
-        playerRigidbody.AddForce(-playerRigidbody.velocity.x,0f,0f,ForceMode.Acceleration);
+        float speedMultiplayer = 1f;
+        
+        if (grounded == false)
+        {
+            speedMultiplayer = 0.2f;
+        }
+
+        if (playerRigidbody.velocity.x > maxSpeed && Input.GetAxis("Horizontal") > 0)
+        {
+            speedMultiplayer = 0;
+        }
+        if (playerRigidbody.velocity.x < -maxSpeed && Input.GetAxis("Horizontal") < 0)
+        {
+            speedMultiplayer = 0;
+        }
+        
+        playerRigidbody.AddForce(Input.GetAxis("Horizontal") * speedPosition * speedMultiplayer,0f,0f,ForceMode.VelocityChange);
+        
+        if (grounded)
+        {
+            playerRigidbody.AddForce(-playerRigidbody.velocity.x * friction,0f,0f,ForceMode.VelocityChange);
+        }
     }
 
     private void OnCollisionStay(Collision collisionInfo)

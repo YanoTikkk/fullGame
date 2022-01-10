@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Pointer : MonoBehaviour
 {
-    [SerializeField] private Camera camera;
+    [SerializeField] private Camera cameraMain;
     [SerializeField] private Transform aim;
 
     private Ray ray;
@@ -14,7 +14,7 @@ public class Pointer : MonoBehaviour
 
     private void LateUpdate()
     {
-        ray = camera.ScreenPointToRay(Input.mousePosition);
+        ray = cameraMain.ScreenPointToRay(Input.mousePosition);
         plane = new Plane(-Vector3.forward, Vector3.zero);
         plane.Raycast(ray, out distance);
         Vector3 point = ray.GetPoint(distance);
