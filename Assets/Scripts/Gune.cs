@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class Gune : MonoBehaviour
 {
-    [SerializeField] private GameObject bullet;
+    [SerializeField] private Rigidbody bullet;
     [SerializeField] private Transform spawnBullet;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float shotDelay;
+    [SerializeField] private float destroyTime = 5f;
 
     private float timerSpawn;
 
@@ -19,8 +20,9 @@ public class Gune : MonoBehaviour
         if (timerSpawn > shotDelay & Input.GetMouseButton(0))
         {
             timerSpawn = 0f;
-            GameObject newBullets = Instantiate(bullet, spawnBullet.position, spawnBullet.rotation);
-            newBullets.GetComponent<Rigidbody>().velocity = spawnBullet.forward * bulletSpeed;
+            Rigidbody newBullets = Instantiate(bullet, spawnBullet.position, spawnBullet.rotation);
+            newBullets.velocity = spawnBullet.forward * bulletSpeed;
+            Destroy(newBullets,destroyTime);
         }
     }
 }

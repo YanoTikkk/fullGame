@@ -3,7 +3,27 @@ guid: 517588c2face947e5b226e1dfb103c8e
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dirt_1
+    second: {fileID: 2100000, guid: 6c2f9a6b7ffac4b099c753f74eaea0d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dirt_2
+    second: {fileID: 2100000, guid: 4ca257b34d1b546c3b2039fb45d327e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dirt_3
+    second: {fileID: 2100000, guid: 207c2adaf7a5344eb8c146c6f2902d59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Green_Light
+    second: {fileID: 2100000, guid: 65e37cd6bf3154e368db41926669269a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

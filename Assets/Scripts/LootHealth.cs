@@ -9,10 +9,15 @@ public class LootHealth : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.attachedRigidbody.GetComponent<PlayerHeath>())
+        if (other.attachedRigidbody)
         {
-            other.attachedRigidbody.GetComponent<PlayerHeath>().AddHealth(healthValue);
-            Destroy(gameObject);
+            PlayerHeath playerHeath = other.attachedRigidbody.GetComponent<PlayerHeath>();
+            
+            if (playerHeath)
+            {
+                playerHeath.AddHealth(healthValue);
+                Destroy(gameObject);
+            }
         }
     }
 }
