@@ -11,17 +11,17 @@ public class Hen : MonoBehaviour
 
     private Vector3 toPlayer;
     private Vector3 force;
-    private Rigidbody rigidbody;
+    private Rigidbody rigidbodyHen;
     
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rigidbodyHen = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
         toPlayer = (playerTransform.position - transform.position).normalized; 
-        force = rigidbody.mass * (toPlayer * speed - rigidbody.velocity) / timeToReachSpeed;
-        rigidbody.AddForce(force);
+        force = rigidbodyHen.mass * (toPlayer * speed - rigidbodyHen.velocity) / timeToReachSpeed;
+        rigidbodyHen.AddForce(force);
     }
 }
