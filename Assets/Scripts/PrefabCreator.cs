@@ -9,6 +9,6 @@ public class PrefabCreator : MonoBehaviour
 
     public void Create()
     {
-        Instantiate(prefab, spawn.position, Quaternion.identity);
+        Instantiate(prefab, spawn.position, spawn.rotation);
     }
 }
