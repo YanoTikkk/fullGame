@@ -1,49 +1,9 @@
 fileFormatVersion: 2
-guid: 05fc0b01c0ef64e9ca58d26daf5c08f0
+guid: 17ddb6fb8b1984ca2a11df3b6e4acf8b
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable:
-  - first:
-      74: -3857714879267639888
-    second: MonsterArmature|Bite_Front
-  - first:
-      74: -6843534626066374220
-    second: MonsterArmature|Bite_InPlace
-  - first:
-      74: 6237853127743800836
-    second: MonsterArmature|Dance
-  - first:
-      74: -7296260868257156209
-    second: MonsterArmature|Death
-  - first:
-      74: 6936222140302613368
-    second: MonsterArmature|HitRecieve
-  - first:
-      74: -6453809224675677941
-    second: MonsterArmature|Idle
-  - first:
-      74: 7722677298674664960
-    second: MonsterArmature|Jump
-  - first:
-      74: 5969706113314887502
-    second: MonsterArmature|No
-  - first:
-      74: 4022358733612687441
-    second: MonsterArmature|Walk
-  - first:
-      74: -3157049221687396579
-    second: MonsterArmature|Yes
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Main
-    second: {fileID: 2100000, guid: 0475b61c1015c426b8ca19a8454d48c0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Main_Light
-    second: {fileID: 2100000, guid: 6337d28354e3a4162b6d1b1339296692, type: 2}
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

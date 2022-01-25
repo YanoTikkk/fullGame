@@ -3,19 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rabbit : MonoBehaviour
+public class SetTriggetEverySeconds : MonoBehaviour
 {
-    [SerializeField] private float attackPeriod = 7f;
+    [SerializeField] private float period = 7f;
     [SerializeField] private Animator animatior;
+    [SerializeField] private string triggerName = "Attack";
     private float timer;
 
     private void Update()
     {
         timer += Time.deltaTime;
-        if (timer > attackPeriod)
+        if (timer > period)
         {
             timer = 0f;
-            animatior.SetTrigger("Attack");
+            animatior.SetTrigger(triggerName);
         }
     }
 }

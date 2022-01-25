@@ -33,7 +33,37 @@ ModelImporter:
   - first:
       74: -3157049221687396579
     second: MonsterArmature|Yes
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyes
+    second: {fileID: 2100000, guid: 615abb2f0ab824bdab90e3e72d48cf65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Horns
+    second: {fileID: 2100000, guid: 0b1ccb00ebc20430095e2aea28bd5b21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main
+    second: {fileID: 2100000, guid: 53a3a983ee50c4202b59833c5414feac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main_Dark
+    second: {fileID: 2100000, guid: 79db3ebd2171c4e189e1f0bb6ec96b56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Teeth
+    second: {fileID: 2100000, guid: fbfd2a5f0ae604df4ad4d093a4e99bc3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tongue
+    second: {fileID: 2100000, guid: db3e1783f42db4f6f8f597230f978272, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
