@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class Bullets : MonoBehaviour
 {
-    [SerializeField] private float destroyTime = 5f;
-    
-    private void Start()
+    private void OnCollisionEnter()
     {
-        Destroy(gameObject,destroyTime);
+        Destroy(gameObject);
     }
 }

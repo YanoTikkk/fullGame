@@ -20,7 +20,10 @@ public class TakeDamageOnTrigger : MonoBehaviour
 
         if (DieOnCollision == true)
         {
-            enemyHealt.TakeDamage(999);
+            if (other.isTrigger == false)
+            {
+                enemyHealt.TakeDamage(999);
+            }
         }
     }
 }
