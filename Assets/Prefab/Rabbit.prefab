@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8437811436260142798}
   - component: {fileID: 8437811436260142793}
   - component: {fileID: 8437811436260142797}
+  - component: {fileID: -2279815760896603276}
   m_Layer: 0
   m_Name: Rabbit
   m_TagString: Untagged
@@ -64,8 +65,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85f74cadd24243328d5fd59f90632a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPeriod: 3
+  period: 7
   animatior: {fileID: 8437811435996375206}
+  triggerName: Attack
 --- !u!114 &8437811436260142796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +165,19 @@ MonoBehaviour:
   LeftEuler: {x: 0, y: -25, z: 0}
   RightEuler: {x: 0, y: -160, z: 0}
   rotationSpeed: 10
+--- !u!114 &-2279815760896603276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8437811436260142837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5037b9af7f15744a190991ec5eb40c77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToActivate: 20
 --- !u!1 &8437811436633258267
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,5 +647,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28041434cb2c4c68b3e1a63e29856e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarrotPrefab: {fileID: 3253759710835429932, guid: cc779e77b88de4a1ca425ea07a407c7c, type: 3}
-  positions: {fileID: 8437811436633258264}
+  prefab: {fileID: 3253759710835429932, guid: cc779e77b88de4a1ca425ea07a407c7c, type: 3}
+  spawn: {fileID: 8437811436633258264}
