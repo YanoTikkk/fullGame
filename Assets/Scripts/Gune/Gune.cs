@@ -20,9 +20,14 @@ public class Gune : MonoBehaviour
         if (timerSpawn > shotDelay & Input.GetMouseButton(0))
         {
             timerSpawn = 0f;
-            Rigidbody newBullets = Instantiate(bullet, spawnBullet.position, spawnBullet.rotation);
-            newBullets.velocity = spawnBullet.forward * bulletSpeed;
-            Destroy(newBullets,destroyTime);
+            Shot();
         }
+    }
+
+    protected void Shot()
+    {
+        Rigidbody newBullets = Instantiate(bullet, spawnBullet.position, spawnBullet.rotation);
+        newBullets.velocity = spawnBullet.forward * bulletSpeed;
+        Destroy(newBullets,destroyTime);
     }
 }
