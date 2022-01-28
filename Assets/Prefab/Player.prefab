@@ -31,6 +31,56 @@ Transform:
   m_Father: {fileID: 3429297572026730147}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &155322141454590521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 815443560028704616}
+  - component: {fileID: 5582831308051887682}
+  m_Layer: 0
+  m_Name: JumpGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &815443560028704616
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155322141454590521}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5246273279605309548}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5582831308051887682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155322141454590521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2d700763c4034886b9201d226eb50ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRigibody: {fileID: 5246273277590575266}
+  speed: 16.41
+  spawn: {fileID: 815443560028704616}
+  pistol: {fileID: 8229222664098274971}
+  maxCharge: 3
+  chargeIcon: {fileID: 0}
 --- !u!1 &230814458998773612
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,6 +165,7 @@ MonoBehaviour:
   destroyTime: 5
   numberBullets: 0
   textNumberBullets: {fileID: 0}
+  playerArmory: {fileID: 8308404135412505247}
 --- !u!1 &2592994055264519233
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guns:
-  - {fileID: 8724016874676675131}
+  - {fileID: 8229222664098274971}
   - {fileID: 2723738803293740838}
   curentGunIndex: 0
 --- !u!54 &5246273277590575266
@@ -509,6 +560,7 @@ Transform:
   m_Children:
   - {fileID: 3429297572026730147}
   - {fileID: 5983080272277669900}
+  - {fileID: 815443560028704616}
   m_Father: {fileID: 5246273277590575264}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -841,7 +893,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3429297572026730147}
-  - component: {fileID: 8724016874676675131}
   - component: {fileID: 8229222664098274971}
   m_Layer: 0
   m_Name: Pistol
@@ -849,7 +900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3429297572026730147
 Transform:
   m_ObjectHideFlags: 0
@@ -867,23 +918,6 @@ Transform:
   m_Father: {fileID: 5246273279605309548}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8724016874676675131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8221647221635135071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8327f86616fd34f76af06863141cb07f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 5826377852365766973, guid: ef7ca78bcaabd4d08a50028e28c46ed2, type: 3}
-  spawnBullet: {fileID: 0}
-  bulletSpeed: 30
-  shotDelay: 0.2
-  destroyTime: 5
 --- !u!114 &8229222664098274971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,10 +930,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d4a1428d41d455786e294feee59df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  spawnBullet: {fileID: 0}
-  bulletSpeed: 0
-  shotDelay: 0
+  bullet: {fileID: 5826377852365766973, guid: ef7ca78bcaabd4d08a50028e28c46ed2, type: 3}
+  spawnBullet: {fileID: 193985383}
+  bulletSpeed: 15
+  shotDelay: 0.25
   destroyTime: 5
 --- !u!1001 &302367120770530466
 PrefabInstance:

@@ -21,12 +21,17 @@ public class PlayerArmory : MonoBehaviour
         {
             if (i == guneIndex)
             {
-                guns[i].gameObject.SetActive(true);
+                guns[i].Activate();
             }
             else
             {
-                guns[i].gameObject.SetActive(false);
+                guns[i].Deactivate();
             }
         }
+    }
+
+    public void AddBullets(int gunIndex ,int numberBullets)
+    {
+        guns[gunIndex].AddBullets(numberBullets);
     }
 }
