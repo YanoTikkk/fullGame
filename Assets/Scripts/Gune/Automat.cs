@@ -43,6 +43,6 @@ public class Automat : Gune
 
     private void UpdateText()
     {
-        textNumberBullets.text = "Патроны: " + numberBullets.ToString();
+        textNumberBullets.text = "Bullets: " + numberBullets.ToString();
     }
 }
