@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 5246273277590575264}
   - component: {fileID: 5246273277590575267}
   - component: {fileID: 8308404135412505247}
+  - component: {fileID: 831237889000063888}
   - component: {fileID: 5246273277590575266}
   - component: {fileID: 5234015398486927145}
   - component: {fileID: 366165893}
@@ -364,6 +365,7 @@ Transform:
   - {fileID: 2590239350467435184}
   - {fileID: 4231245517789010926}
   - {fileID: 2338578697029996031}
+  - {fileID: 327791926547589785}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -400,6 +402,25 @@ MonoBehaviour:
   - {fileID: 8229222664098274971}
   - {fileID: 2723738803293740838}
   curentGunIndex: 0
+--- !u!114 &831237889000063888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5246273277590575265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173457007101e4e358031cd780678a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hook: {fileID: 0}
+  spawnHook: {fileID: 5246273279605309548}
+  RopeStart: {fileID: 0}
+  speed: 30
+  spring: 100
+  damper: 5
+  maxDistance: 3
 --- !u!54 &5246273277590575266
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -587,7 +608,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2338578697029996031}
-  - component: {fileID: 5485102654377239663}
   - component: {fileID: 6142725243319015350}
   m_Layer: 0
   m_Name: Mesh
@@ -612,19 +632,6 @@ Transform:
   m_Father: {fileID: 5246273277590575264}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5485102654377239663
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6701375369093732345}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.5, y: 0.85, z: 1}
-  m_Center: {x: 0, y: -0.06, z: 0}
 --- !u!65 &6142725243319015350
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -852,6 +859,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7164939735044699659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 327791926547589785}
+  m_Layer: 0
+  m_Name: RopeStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &327791926547589785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164939735044699659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.405, y: -0.107, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5246273277590575264}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7167672033281713453
 GameObject:
   m_ObjectHideFlags: 0
