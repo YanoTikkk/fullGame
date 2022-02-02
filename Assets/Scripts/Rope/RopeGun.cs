@@ -19,6 +19,7 @@ public class RopeGun : MonoBehaviour
     [SerializeField] private float spring = 100f;
     [SerializeField] private float damper = 5f;
     [SerializeField] private RopeRender ropeRenderer;
+    [SerializeField] private PlayerMover playerMove;
 
     private float lengthRope;
     private Rigidbody hookRigibody;
@@ -47,6 +48,14 @@ public class RopeGun : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            if (curentRopesState == RopesState.active)
+            {
+                if (playerMove.Grounded == false)
+                {
+                    playerMove.Jump();
+                }
+            }
+            
             DestroySpring();
         }
 
