@@ -18,6 +18,7 @@ public class RopeGun : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float spring = 100f;
     [SerializeField] private float damper = 5f;
+    [SerializeField] private RopeRender ropeRenderer;
 
     private float lengthRope;
     private Rigidbody hookRigibody;
@@ -40,6 +41,7 @@ public class RopeGun : MonoBehaviour
             {
                 hook.gameObject.SetActive(false);
                 curentRopesState = RopesState.disablet;
+                ropeRenderer.Hide();
             }
         }
 
@@ -47,10 +49,17 @@ public class RopeGun : MonoBehaviour
         {
             DestroySpring();
         }
+
+        if (curentRopesState == RopesState.fly || curentRopesState == RopesState.active)
+        {
+            ropeRenderer.Draw(RopeStart.position,hook.transform.position,lengthRope);
+        }
     }
 
     private void Shoot()
     {
+        lengthRope = 1f;
+        
         if (springJoint)
         {
             Destroy(springJoint);
@@ -92,6 +101,7 @@ public class RopeGun : MonoBehaviour
             Destroy(springJoint);
             curentRopesState = RopesState.disablet;
             hook.gameObject.SetActive(false);
+            ropeRenderer.Hide();
         }
     }
 }
