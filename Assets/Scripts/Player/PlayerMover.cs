@@ -12,10 +12,14 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float speedPosition = 5f;
     [SerializeField] private float friction = 5f;
     [SerializeField] private float maxSpeed;
-    
+
+    private int jumpFrameCounter;
     private Rigidbody playerRigidbody;
     private float inputHorizontal;
     private bool grounded;
+
+    public bool Grounded => grounded;
+
 
     private void Start()
     {
@@ -25,20 +29,30 @@ public class PlayerMover : MonoBehaviour
     private void Update()
     {
         ScaleColider();
-        Jump();
+        
+        if (Input.GetKeyDown(KeyCode.Space) & grounded)
+        {
+            Jump();
+        }
     }
 
     private void FixedUpdate()
     {
         Mover();
+
+        jumpFrameCounter++;
+        
+        if (jumpFrameCounter == 2)
+        {
+            playerRigidbody.freezeRotation = false;
+            playerRigidbody.AddRelativeTorque(0,0,10f,ForceMode.VelocityChange);
+        }
     }
 
-    private void Jump()
+    public void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) & grounded)
-        {
-            playerRigidbody.AddForce(0f, jumpSpeed,0f, ForceMode.VelocityChange);
-        }
+        playerRigidbody.AddForce(0f, jumpSpeed,0f, ForceMode.VelocityChange);
+        jumpFrameCounter = 0;
     }
 
     private void ScaleColider()
@@ -78,6 +92,7 @@ public class PlayerMover : MonoBehaviour
         if (grounded)
         {
             playerRigidbody.AddForce(-playerRigidbody.velocity.x * friction,0f,0f,ForceMode.VelocityChange);
+            transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.identity, Time.deltaTime * 15f);
         }
     }
 
@@ -87,6 +102,7 @@ public class PlayerMover : MonoBehaviour
         if (angle < 45f)
         {
             grounded = true;
+            playerRigidbody.freezeRotation = true;
         }
     }
 
