@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Screen = UnityEngine.Device.Screen;
 
 public class Menu : MonoBehaviour
 {
@@ -17,9 +13,9 @@ public class Menu : MonoBehaviour
         menuButtom.SetActive(false);
         uiMenu.SetActive(true);
         
-        foreach (var VARIABLE in componentsToDisaple)
+        foreach (var variable in componentsToDisaple)
         {
-            VARIABLE.enabled = false;
+            variable.enabled = false;
         }
 
         Time.timeScale = 0.01f;
@@ -30,9 +26,9 @@ public class Menu : MonoBehaviour
         menuButtom.SetActive(true);
         uiMenu.SetActive(false);
         
-        foreach (var VARIABLE in componentsToDisaple)
+        foreach (var variable in componentsToDisaple)
         {
-            VARIABLE.enabled = true;
+            variable.enabled = true;
         }
 
         Time.timeScale = 1f;
