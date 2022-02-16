@@ -1,20 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 
 public class PlayerHeath : MonoBehaviour
 {
     [SerializeField] private int health = 3;
     [SerializeField] private HealthUI healthUI;
     [SerializeField] private int maxHealt = 5;
+    [SerializeField] private TMP_Text text;
 
     public UnityEvent eventOnTakeDamage;
     public UnityEvent eventOnHealthTake;
-    public UnityEvent eventDie;
     private bool invurable = false;
 
     private void Start()
@@ -59,6 +55,7 @@ public class PlayerHeath : MonoBehaviour
 
     private void Die()
     {
-        eventDie.Invoke();
+        text.color = Color.red;
+        text.text = "ВЫ ПРОИГРАЛИ";
     }
 }
