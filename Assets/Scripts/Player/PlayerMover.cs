@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerMover : MonoBehaviour
 {
@@ -12,11 +7,13 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float speedPosition = 5f;
     [SerializeField] private float friction = 5f;
     [SerializeField] private float maxSpeed;
-
+    [SerializeField] private Animator animator;
+    
     private int jumpFrameCounter;
     private Rigidbody playerRigidbody;
     private float inputHorizontal;
     private bool grounded;
+    private static readonly int JumpEnd = Animator.StringToHash("JumpEnd");
 
     public bool Grounded => grounded;
 
@@ -53,6 +50,7 @@ public class PlayerMover : MonoBehaviour
     {
         playerRigidbody.AddForce(0f, jumpSpeed,0f, ForceMode.VelocityChange);
         jumpFrameCounter = 0;
+        animator.SetTrigger("Jump");
     }
 
     private void ScaleColider()
@@ -76,23 +74,32 @@ public class PlayerMover : MonoBehaviour
         if (grounded == false)
         {
             speedMultiplayer = 0.2f;
+            animator.SetTrigger("Jump");
         }
 
         if (playerRigidbody.velocity.x > maxSpeed && Input.GetAxis("Horizontal") > 0)
         {
             speedMultiplayer = 0;
+            animator.SetTrigger("Run");
         }
         if (playerRigidbody.velocity.x < -maxSpeed && Input.GetAxis("Horizontal") < 0)
         {
             speedMultiplayer = 0;
+            animator.SetTrigger("Run");
+        }
+
+        if (Input.GetAxis("Horizontal") == 0)
+        {
+            animator.SetTrigger("Idle");
         }
         
         playerRigidbody.AddForce(Input.GetAxis("Horizontal") * speedPosition * speedMultiplayer,0f,0f,ForceMode.VelocityChange);
-        
+
         if (grounded)
         {
             playerRigidbody.AddForce(-playerRigidbody.velocity.x * friction,0f,0f,ForceMode.VelocityChange);
             transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.identity, Time.deltaTime * 15f);
+            animator.SetTrigger("JumpEnd");
         }
     }
 
@@ -103,6 +110,7 @@ public class PlayerMover : MonoBehaviour
         {
             grounded = true;
             playerRigidbody.freezeRotation = true;
+            animator.SetTrigger(JumpEnd);
         }
     }
 
